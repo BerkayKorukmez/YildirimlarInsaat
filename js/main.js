@@ -14,6 +14,15 @@
   /* -------- Mobile menu -------- */
   const toggle = document.querySelector('.nav-toggle');
   const menu = document.querySelector('.nav-menu');
+  const closeMenu = () => {
+    if (!menu || !menu.classList.contains('open')) return;
+    menu.classList.remove('open');
+    const icon = toggle && toggle.querySelector('i');
+    if (icon) {
+      icon.classList.add('fa-bars');
+      icon.classList.remove('fa-xmark');
+    }
+  };
   if (toggle && menu) {
     toggle.addEventListener('click', () => {
       menu.classList.toggle('open');
@@ -26,14 +35,12 @@
     menu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         if (menu.classList.contains('open') && !link.parentElement.classList.contains('has-drop')) {
-          menu.classList.remove('open');
-          const icon = toggle.querySelector('i');
-          if (icon) {
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-xmark');
-          }
+          closeMenu();
         }
       });
+    });
+    window.addEventListener('resize', () => {
+      if (window.matchMedia('(min-width: 821px)').matches) closeMenu();
     });
   }
 
