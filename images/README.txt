@@ -5,19 +5,21 @@ ANA SAYFA:
   hero-1.jpg               -> Hero arka planı
   about-1.jpg, about-2.jpg -> Hakkımızda bölümü
 
-HİZMET KARTLARI (site service-* görsel dosyaları; uzantı .jpg veya .png):
-  service-1.png            -> Parlak perdahlı / parlak beton silim (agrega görünümlü ayna yüzey)
-  service-2.png            -> Fırçalı (broom) beton — geniş alan dış yüzey
-  service-3.png            -> Tepsili sayfası vitrin görseli: parlak terrazzo (geometrik desenli)
-  service-4.png            -> Endüstriyel beton vitrin: baskı beton (taş desenli dış mekân)
-  service-5.png            -> Yüzey sertleştirici vitrin: kuru sarf saha (çatı/teras, perdah)
-  service-6.png            -> Derz kesim & dolgu vitrin: düz endüstriyel epoksi (turkuaz koridor görseli)
-  service-tashali.png      -> Taş halı / reçine bağlı agregalı kaplama (saha uygulama görseli)
-  service-7.png            -> Zemin bakım ve onarım (çatlak onarımı / saha görseli)
+HİZMET GÖRSELLERİ:
+  service-1.png            -> Parlak perdahlı / parlak beton silim
+  service-2.png            -> Fırçalı (broom) beton
+  service-3.png            -> Tepsili vitrin: terrazzo
+  service-4.jpg            -> Endüstriyel beton dökümü (geniş alan)
+  service-baski.png        -> Baskı beton (stamp) — endüstriyel sayfada ikinci görsel
+  service-5.png            -> Yüzey sertleştirici (kuru sarf saha)
+  service-epoksi.png       -> Endüstriyel epoksi — yüzey sayfasında ikinci görsel
+  service-6.jpg            -> Derz kesim & dolgu vitrin: derz hatlı parlak beton döşeme
+  service-tashali.png      -> Taş halı
+  service-7.png            -> Zemin bakım ve onarım
 
-Kaynak dosyalar Türkçe adlarla da eklenebilir; yayına service-*.jpg olarak kopyalanmalıdır.
+Kaynak stok: service-endustriyel.jpg, epoksi kaplama.jpg, terrazzo.jpg vb.
 
 REFERANSLAR:
   ref-1.jpg … ref-13.jpg
 
-Not: Görsel uzantısı değişirse index ve hizmetler/*.html içindeki yolları güncelleyin.
+Not: HTML yolları uzantıya göre .jpg / .png; değişince tüm referansları güncelleyin.
