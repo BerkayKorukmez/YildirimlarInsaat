@@ -27,6 +27,7 @@
   "redirects": [
     { "source": "/hizmetler", "destination": "/#hizmetler", "permanent": false },
     { "source": "/hizmetler/endustriyel-zemin.html", "destination": "/hizmetler/endustriyel-beton-zemin.html", "permanent": true },
+    { "source": "/hizmetler/epoksi-kaplama.html", "destination": "/hizmetler/yuzey-sertlestirici.html", "permanent": true },
     { "source": "/hizmetler/beton-parlatma.html", "destination": "/hizmetler/parlak-perdahli-zemin.html", "permanent": true },
     { "source": "/hizmetler/silim-kesim.html", "destination": "/hizmetler/derz-kesim-dolgu.html", "permanent": true },
     { "source": "/hizmetler/yol-cizgi.html", "destination": "/hizmetler/fircali-zemin.html", "permanent": true },
