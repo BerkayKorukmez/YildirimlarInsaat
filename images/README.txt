@@ -8,10 +8,10 @@ ANA SAYFA:
 HİZMET KARTLARI (site service-*.jpg dosya adlarını kullanır):
   service-1.jpg            -> Parlak perdahlı / silimli beton (parlak beton silim)
   service-2.jpg            -> Fırçalı (broom) beton
-  service-3.jpg            -> Tepsili / geniş hacim ticari döşeme (ör. terrazzo görseli)
+  service-3.jpg            -> Tepsili sayfası vitrin görseli: terrazzo / granit döşeme
   service-4.jpg            -> Endüstriyel beton, baskı beton
-  service-5.jpg            -> Yüzey sertleştirici + dekoratif desenli epoksi
-  service-6.jpg            -> Derz kesim & dolgu (epoksi iç mekân bitişi ile uyumlu görsel)
+  service-5.jpg            -> Yüzey sertleştirici vitrin: desenli (dekoratif) epoksi
+  service-6.jpg            -> Derz kesim & dolgu vitrin: standart (düz) epoksi kaplama
   service-tashali.jpg      -> Taş halı / reçine bağlı agregalı kaplama
   service-7.jpg            -> Zemin bakım ve onarım
 
