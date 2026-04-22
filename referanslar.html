@@ -32,6 +32,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css?v=22" />
@@ -39,14 +41,40 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "@id": "https://yldrmlarinsaat.com/referanslar.html#refs",
-    "url": "https://yldrmlarinsaat.com/referanslar.html",
-    "name": "Referanslarımız — Yıldırımlar İnşaat",
-    "description": "Osmanlı Arşiv, Hilton, Wyndham, Roketsan ve daha fazlası. 19+ prestijli projede 1.568.000 m² zemin uygulaması.",
-    "isPartOf": { "@id": "https://yldrmlarinsaat.com/#website" },
-    "about": { "@id": "https://yldrmlarinsaat.com/#organization" },
-    "inLanguage": "tr-TR"
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://yldrmlarinsaat.com/referanslar.html#refs",
+        "url": "https://yldrmlarinsaat.com/referanslar.html",
+        "name": "Referanslarımız — Yıldırımlar İnşaat",
+        "description": "Osmanlı Arşiv, Hilton, Wyndham, Roketsan ve daha fazlası. 19+ prestijli projede 1.568.000 m² zemin uygulaması.",
+        "isPartOf": { "@id": "https://yldrmlarinsaat.com/#website" },
+        "about": { "@id": "https://yldrmlarinsaat.com/#organization" },
+        "primaryImageOfPage": "https://yldrmlarinsaat.com/images/ref-1.jpg",
+        "breadcrumb": { "@id": "https://yldrmlarinsaat.com/referanslar.html#breadcrumb" },
+        "inLanguage": "tr-TR"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://yldrmlarinsaat.com/referanslar.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://yldrmlarinsaat.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Referanslarımız" }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://yldrmlarinsaat.com/referanslar.html#projects",
+        "name": "Tamamlanan Projeler",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Eston Deniz Evleri — Parlak Perdahlı Zemin (250.000 m²)" },
+          { "@type": "ListItem", "position": 2, "name": "Osmanlı Arşiv Binası — Parlak Perdahlı Zemin (150.000 m²)" },
+          { "@type": "ListItem", "position": 3, "name": "Giresun Çotanak Stadı — Parlak Perdahlı & Fırçalı Zemin (150.000 m²)" },
+          { "@type": "ListItem", "position": 4, "name": "Samsun Tekkeköy Devlet Hastanesi — Parlak Perdahlı & Fırçalı Zemin (120.000 m²)" },
+          { "@type": "ListItem", "position": 5, "name": "Roketsan Kırıkkale — Fırçalı Zemin (80.000 m²)" }
+        ]
+      }
+    ]
   }
   </script>
 </head>

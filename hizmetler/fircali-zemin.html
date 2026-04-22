@@ -32,6 +32,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="../css/style.css?v=22" />
@@ -43,11 +45,20 @@
         "@type": "Service",
         "@id": "https://yldrmlarinsaat.com/hizmetler/fircali-zemin.html#service",
         "name": "Fırçalı Zemin Uygulaması",
-        "description": "Kaymaz fırçalı endüstriyel beton zemin.",
+        "description": "Kaymaz (anti-slip) yüzeyli fırçalı beton zemin; rampa, dış mekân ve yüksek trafikli alanlar için güvenli, dayanıklı endüstriyel zemin çözümü.",
         "url": "https://yldrmlarinsaat.com/hizmetler/fircali-zemin.html",
+        "image": "https://yldrmlarinsaat.com/images/service-2.png",
         "provider": { "@id": "https://yldrmlarinsaat.com/#organization" },
         "areaServed": { "@type": "Country", "name": "Türkiye" },
-        "serviceType": "Fırçalı Zemin Uygulaması"
+        "serviceType": "Fırçalı Zemin Uygulaması",
+        "category": "Endüstriyel Zemin Uygulamaları",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "priceCurrency": "TRY",
+          "url": "https://yldrmlarinsaat.com/iletisim.html",
+          "businessFunction": "https://schema.org/ProvideService"
+        }
       },
       {
         "@type": "WebPage",
@@ -57,7 +68,18 @@
         "description": "Kaymaz fırçalı endüstriyel beton zemin.",
         "isPartOf": { "@id": "https://yldrmlarinsaat.com/#website" },
         "about": { "@id": "https://yldrmlarinsaat.com/hizmetler/fircali-zemin.html#service" },
+        "primaryImageOfPage": "https://yldrmlarinsaat.com/images/service-2.png",
+        "breadcrumb": { "@id": "https://yldrmlarinsaat.com/hizmetler/fircali-zemin.html#breadcrumb" },
         "inLanguage": "tr-TR"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://yldrmlarinsaat.com/hizmetler/fircali-zemin.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://yldrmlarinsaat.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Hizmetler", "item": "https://yldrmlarinsaat.com/#hizmetler" },
+          { "@type": "ListItem", "position": 3, "name": "Fırçalı Zemin Uygulaması" }
+        ]
       }
     ]
   }

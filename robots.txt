@@ -1,8 +1,58 @@
 # https://yldrmlarinsaat.com
+# Yıldırımlar İnşaat — Endüstriyel Zemin Uygulamaları
+
 User-agent: *
 Allow: /
-
-# Teşekkür sayfası arama sonuçlarında listelenmesin (noindex ile birlikte)
 Disallow: /tesekkur.html
 
+# Arama motorlarına özel izinler (gereksiz kısıtlama yok)
+User-agent: Googlebot
+Allow: /
+Disallow: /tesekkur.html
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Disallow: /tesekkur.html
+
+User-agent: YandexBot
+Allow: /
+Disallow: /tesekkur.html
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Yapay zekâ / büyük dil modeli tarayıcıları (içerik indeksleme)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Zararlı / agresif tarayıcıları kısıtla
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# Site haritası
 Sitemap: https://yldrmlarinsaat.com/sitemap.xml

@@ -32,6 +32,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css?v=22" />
@@ -39,14 +41,28 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "@id": "https://yldrmlarinsaat.com/hakkimizda.html#about",
-    "url": "https://yldrmlarinsaat.com/hakkimizda.html",
-    "name": "Hakkımızda — Yıldırımlar İnşaat",
-    "description": "28 yıllık tecrübe ile 1.568.000 m² endüstriyel zemin uyguladık. Prestijli projelerde imzamız var.",
-    "isPartOf": { "@id": "https://yldrmlarinsaat.com/#website" },
-    "about": { "@id": "https://yldrmlarinsaat.com/#organization" },
-    "inLanguage": "tr-TR"
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://yldrmlarinsaat.com/hakkimizda.html#about",
+        "url": "https://yldrmlarinsaat.com/hakkimizda.html",
+        "name": "Hakkımızda — Yıldırımlar İnşaat",
+        "description": "28 yıllık tecrübe ile 1.568.000 m² endüstriyel zemin uyguladık. Prestijli projelerde imzamız var.",
+        "isPartOf": { "@id": "https://yldrmlarinsaat.com/#website" },
+        "about": { "@id": "https://yldrmlarinsaat.com/#organization" },
+        "primaryImageOfPage": "https://yldrmlarinsaat.com/images/about-1.jpg",
+        "breadcrumb": { "@id": "https://yldrmlarinsaat.com/hakkimizda.html#breadcrumb" },
+        "inLanguage": "tr-TR"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://yldrmlarinsaat.com/hakkimizda.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://yldrmlarinsaat.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Hakkımızda" }
+        ]
+      }
+    ]
   }
   </script>
 </head>

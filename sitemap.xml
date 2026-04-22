@@ -1,81 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
   <url>
     <loc>https://yldrmlarinsaat.com/</loc>
     <lastmod>2026-04-22</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/hero-1.jpg</image:loc>
+      <image:title>Yıldırımlar İnşaat — Endüstriyel Zemin Uygulamaları</image:title>
+      <image:caption>28 yıllık tecrübe, 1.568.000 m² uygulanan alan.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/logo-yildirim.png</image:loc>
+      <image:title>Yıldırımlar İnşaat logosu</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://yldrmlarinsaat.com/hakkimizda.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/about-1.jpg</image:loc>
+      <image:title>Yıldırımlar İnşaat — Hakkımızda</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/about-2.jpg</image:loc>
+      <image:title>Endüstriyel zemin uygulaması</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://yldrmlarinsaat.com/referanslar.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/ref-1.jpg</image:loc>
+      <image:title>Eston Deniz Evleri — Parlak Perdahlı Zemin</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/ref-2.jpg</image:loc>
+      <image:title>Osmanlı Arşiv Binası — Parlak Perdahlı Zemin</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/ref-3.jpg</image:loc>
+      <image:title>Giresun Çotanak Stadı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/ref-4.jpg</image:loc>
+      <image:title>Samsun Tekkeköy Devlet Hastanesi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/ref-5.jpg</image:loc>
+      <image:title>Roketsan Kırıkkale — Fırçalı Zemin</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://yldrmlarinsaat.com/iletisim.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://yldrmlarinsaat.com/hizmetler/parlak-perdahli-zemin.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/service-1.png</image:loc>
+      <image:title>Parlak Perdahlı Zemin</image:title>
+      <image:caption>Ayna parlaklığında, tozumaz, ultra dayanıklı endüstriyel beton zemin.</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://yldrmlarinsaat.com/hizmetler/fircali-zemin.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/service-2.png</image:loc>
+      <image:title>Fırçalı Zemin Uygulaması</image:title>
+      <image:caption>Kaymaz, anti-slip yüzeyli dış mekân endüstriyel zemin.</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://yldrmlarinsaat.com/hizmetler/tepsili-zemin.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/service-3.png</image:loc>
+      <image:title>Tepsili (Laser Screed) Zemin</image:title>
+      <image:caption>Lazer kontrollü düşük toleranslı geniş hacim beton zemin.</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://yldrmlarinsaat.com/hizmetler/endustriyel-beton-zemin.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/service-4.jpg</image:loc>
+      <image:title>Endüstriyel Beton Zemin</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://yldrmlarinsaat.com/hizmetler/yuzey-sertlestirici.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/service-5.png</image:loc>
+      <image:title>Yüzey Sertleştirici</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://yldrmlarinsaat.com/hizmetler/desenli-epoksi.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/desenli%20epoksi.jpg</image:loc>
+      <image:title>Desenli Epoksi Kaplama</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://yldrmlarinsaat.com/hizmetler/derz-kesim-dolgu.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/service-6.jpg</image:loc>
+      <image:title>Derz Kesim ve Dolgu</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://yldrmlarinsaat.com/hizmetler/tas-hali.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/service-tashali.png</image:loc>
+      <image:title>Taş Halı Uygulaması</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://yldrmlarinsaat.com/hizmetler/zemin-bakim-onarim.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://yldrmlarinsaat.com/images/service-7.png</image:loc>
+      <image:title>Zemin Bakım ve Onarım</image:title>
+    </image:image>
   </url>
+
 </urlset>

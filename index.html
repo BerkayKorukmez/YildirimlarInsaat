@@ -33,6 +33,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="preload" as="image" href="images/hero-1.jpg" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css?v=22" />
@@ -75,7 +79,101 @@
         "url": "https://yldrmlarinsaat.com/",
         "name": "Yıldırımlar İnşaat",
         "publisher": { "@id": "https://yldrmlarinsaat.com/#organization" },
+        "inLanguage": "tr-TR",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": { "@type": "EntryPoint", "urlTemplate": "https://yldrmlarinsaat.com/?s={search_term_string}" },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://yldrmlarinsaat.com/#webpage",
+        "url": "https://yldrmlarinsaat.com/",
+        "name": "Yıldırımlar İnşaat — Endüstriyel Zemin Uygulamaları",
+        "description": "28 yıllık tecrübe ile 1.568.000 m² endüstriyel zemin uyguladık. Parlak perdahlı, fırçalı ve tepsili beton zemin çözümleri. Türkiye geneli hizmet.",
+        "isPartOf": { "@id": "https://yldrmlarinsaat.com/#website" },
+        "about": { "@id": "https://yldrmlarinsaat.com/#organization" },
+        "primaryImageOfPage": "https://yldrmlarinsaat.com/images/hero-1.jpg",
+        "breadcrumb": { "@id": "https://yldrmlarinsaat.com/#breadcrumb" },
         "inLanguage": "tr-TR"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://yldrmlarinsaat.com/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://yldrmlarinsaat.com/" }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://yldrmlarinsaat.com/#services",
+        "name": "Yıldırımlar İnşaat Hizmetleri",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "url": "https://yldrmlarinsaat.com/hizmetler/parlak-perdahli-zemin.html", "name": "Parlak Perdahlı Zemin" },
+          { "@type": "ListItem", "position": 2, "url": "https://yldrmlarinsaat.com/hizmetler/fircali-zemin.html", "name": "Fırçalı Zemin Uygulaması" },
+          { "@type": "ListItem", "position": 3, "url": "https://yldrmlarinsaat.com/hizmetler/tepsili-zemin.html", "name": "Tepsili (Laser Screed) Zemin" },
+          { "@type": "ListItem", "position": 4, "url": "https://yldrmlarinsaat.com/hizmetler/endustriyel-beton-zemin.html", "name": "Endüstriyel Beton Zemin" },
+          { "@type": "ListItem", "position": 5, "url": "https://yldrmlarinsaat.com/hizmetler/yuzey-sertlestirici.html", "name": "Yüzey Sertleştirici" },
+          { "@type": "ListItem", "position": 6, "url": "https://yldrmlarinsaat.com/hizmetler/desenli-epoksi.html", "name": "Desenli Epoksi" },
+          { "@type": "ListItem", "position": 7, "url": "https://yldrmlarinsaat.com/hizmetler/derz-kesim-dolgu.html", "name": "Derz Kesim ve Dolgu" },
+          { "@type": "ListItem", "position": 8, "url": "https://yldrmlarinsaat.com/hizmetler/tas-hali.html", "name": "Taş Halı Uygulaması" },
+          { "@type": "ListItem", "position": 9, "url": "https://yldrmlarinsaat.com/hizmetler/zemin-bakim-onarim.html", "name": "Zemin Bakım ve Onarım" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://yldrmlarinsaat.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Endüstriyel beton zemin uygulaması ne kadar sürede tamamlanır?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Proje büyüklüğüne, döküm hacmine ve uygulama tipine (parlak perdah, fırçalı, tepsili vb.) göre değişir. Ortalama 1.000 m²'lik bir saha, perdah ve silim dahil 3-7 iş günü içinde tamamlanabilir. Detaylı program keşif sonrası paylaşılır."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Parlak perdahlı zemin ile fırçalı zemin arasındaki fark nedir?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Parlak perdahlı zemin ayna parlaklığında, tozumaz ve kapalı iç mekânlarda tercih edilir. Fırçalı zemin ise yüzeyi tırtıllı, kaymaz yapıda olup rampa, dış mekân ve yüksek trafikli alanlarda güvenlik amacıyla uygulanır."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hangi bölgelerde hizmet veriyorsunuz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yıldırımlar İnşaat olarak merkez ofisimiz Beylikdüzü / İstanbul'da bulunmakta olup Türkiye genelinde endüstriyel zemin, parlak perdah, fırçalı zemin, tepsili (laser screed), taş halı ve epoksi kaplama hizmetleri veriyoruz."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Yüzey sertleştirici uygulaması nedir, neden gereklidir?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yüzey sertleştirici, taze beton üzerine serilen korundum veya kuvars esaslı kuru sarf malzemesidir. Perdah ile birlikte yüzeye entegre edilir; aşınma direncini, darbe dayanımını ve yüzey ömrünü önemli ölçüde artırır."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Uyguladığınız zeminlerde garanti var mı?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Evet. Tüm uygulamalarımızda işçilik ve sistem garantisi sağlıyoruz. Süre ve kapsam, seçilen sistem ile kullanım koşullarına göre sözleşmede net olarak tanımlanır."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ücretsiz keşif ve teklif alabilir miyim?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Evet, projeniz için ücretsiz keşif ve detaylı teklif sunuyoruz. 0538 645 58 44 numaralı telefondan, WhatsApp'tan veya iletişim formundan bize ulaşabilirsiniz."
+            }
+          }
+        ]
       }
     ]
   }
@@ -166,7 +264,7 @@
         </div>
 
         <div class="hero-visual reveal reveal-delay-2">
-          <img src="images/hero-1.jpg" alt="Endüstriyel zemin uygulaması" onerror="this.style.display='none'" />
+          <img src="images/hero-1.jpg" alt="Endüstriyel zemin uygulaması" fetchpriority="high" decoding="async" onerror="this.style.display='none'" />
           <div class="hero-badge">
             <div class="hero-badge-icon"><i class="fa-solid fa-shield-halved"></i></div>
             <div class="hero-badge-text">
@@ -194,10 +292,10 @@
             <div class="txt">Yıllık Tecrübe</div>
           </div>
           <div class="main-img">
-            <img src="images/about-1.jpg" alt="Yıldırımlar İnşaat" onerror="this.style.display='none'" />
+            <img src="images/about-1.jpg" alt="Yıldırımlar İnşaat endüstriyel zemin ekibi" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           </div>
           <div class="sub-img">
-            <img src="images/about-2.jpg" alt="Endüstriyel zemin uygulaması" onerror="this.style.display='none'" />
+            <img src="images/about-2.jpg" alt="Parlak perdahlı endüstriyel beton zemin uygulaması" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           </div>
         </div>
 
@@ -244,7 +342,7 @@
         <article class="service-card reveal">
           <a href="hizmetler/parlak-perdahli-zemin.html" class="service-card-hit" aria-labelledby="svc-parlak"></a>
           <div class="service-media">
-            <img src="images/service-1.png" alt="Parlak beton silim — agrega görünümlü ayna parlaklığında ticari zemin" onerror="this.style.display='none'" />
+            <img src="images/service-1.png" alt="Parlak beton silim — agrega görünümlü ayna parlaklığında ticari zemin" loading="lazy" decoding="async" onerror="this.style.display='none'" />
             <div class="service-icon"><i class="fa-solid fa-gem"></i></div>
             <div class="service-num">01</div>
           </div>
@@ -258,7 +356,7 @@
         <article class="service-card reveal reveal-delay-1">
           <a href="hizmetler/fircali-zemin.html" class="service-card-hit" aria-labelledby="svc-fircali"></a>
           <div class="service-media">
-            <img src="images/service-2.png" alt="Fırçalı beton — broom finish paralel çizgili kaydırmaz dış zemin" onerror="this.style.display='none'" />
+            <img src="images/service-2.png" alt="Fırçalı beton — broom finish paralel çizgili kaydırmaz dış zemin" loading="lazy" decoding="async" onerror="this.style.display='none'" />
             <div class="service-icon"><i class="fa-solid fa-shoe-prints"></i></div>
             <div class="service-num">02</div>
           </div>
@@ -272,7 +370,7 @@
         <article class="service-card reveal reveal-delay-2">
           <a href="hizmetler/tepsili-zemin.html" class="service-card-hit" aria-labelledby="svc-tepsili"></a>
           <div class="service-media">
-            <img src="images/service-3.png" alt="Parlak terrazzo zemin — geometrik desenli döşeme" onerror="this.style.display='none'" />
+            <img src="images/service-3.png" alt="Parlak terrazzo zemin — geometrik desenli döşeme" loading="lazy" decoding="async" onerror="this.style.display='none'" />
             <div class="service-icon"><i class="fa-solid fa-ruler-combined"></i></div>
             <div class="service-num">03</div>
           </div>
@@ -286,7 +384,7 @@
         <article class="service-card reveal">
           <a href="hizmetler/endustriyel-beton-zemin.html" class="service-card-hit" aria-labelledby="svc-endustriyel"></a>
           <div class="service-media">
-            <img src="images/service-4.jpg" alt="Endüstriyel beton zemin — geniş döküm, üretim veya depo alanı" onerror="this.style.display='none'" />
+            <img src="images/service-4.jpg" alt="Endüstriyel beton zemin — geniş döküm, üretim veya depo alanı" loading="lazy" decoding="async" onerror="this.style.display='none'" />
             <div class="service-icon"><i class="fa-solid fa-industry"></i></div>
             <div class="service-num">04</div>
           </div>
@@ -300,7 +398,7 @@
         <article class="service-card reveal reveal-delay-1">
           <a href="hizmetler/yuzey-sertlestirici.html" class="service-card-hit" aria-labelledby="svc-yuzey"></a>
           <div class="service-media">
-            <img src="images/service-5.png" alt="Yüzey sertleştirici — taze beton üzerine kuru sarf serimi ve perdah sahası" onerror="this.style.display='none'" />
+            <img src="images/service-5.png" alt="Yüzey sertleştirici — taze beton üzerine kuru sarf serimi ve perdah sahası" loading="lazy" decoding="async" onerror="this.style.display='none'" />
             <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
             <div class="service-num">05</div>
           </div>
@@ -314,7 +412,7 @@
         <article class="service-card reveal reveal-delay-2">
           <a href="hizmetler/derz-kesim-dolgu.html" class="service-card-hit" aria-labelledby="svc-derz"></a>
           <div class="service-media">
-            <img src="images/service-6.jpg" alt="Büyük döşemede derz hatları — kesim ve dolgu ile yönetilen parlak beton zemin" onerror="this.style.display='none'" />
+            <img src="images/service-6.jpg" alt="Büyük döşemede derz hatları — kesim ve dolgu ile yönetilen parlak beton zemin" loading="lazy" decoding="async" onerror="this.style.display='none'" />
             <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
             <div class="service-num">06</div>
           </div>
@@ -328,7 +426,7 @@
         <article class="service-card reveal">
           <a href="hizmetler/tas-hali.html" class="service-card-hit" aria-labelledby="svc-tas-hali"></a>
           <div class="service-media">
-            <img src="images/service-tashali.png" alt="Taş halı uygulaması — reçine bağlı agreganın malta ile serilmesi" onerror="this.style.display='none'" />
+            <img src="images/service-tashali.png" alt="Taş halı uygulaması — reçine bağlı agreganın malta ile serilmesi" loading="lazy" decoding="async" onerror="this.style.display='none'" />
             <div class="service-icon"><i class="fa-solid fa-border-all"></i></div>
             <div class="service-num">07</div>
           </div>
@@ -342,7 +440,7 @@
         <article class="service-card reveal reveal-delay-1">
           <a href="hizmetler/zemin-bakim-onarim.html" class="service-card-hit" aria-labelledby="svc-bakim"></a>
           <div class="service-media">
-            <img src="images/service-7.png" alt="Beton zeminde çatlak onarımı — saha ekibi ve yüzey hazırlığı" onerror="this.style.display='none'" />
+            <img src="images/service-7.png" alt="Beton zeminde çatlak onarımı — saha ekibi ve yüzey hazırlığı" loading="lazy" decoding="async" onerror="this.style.display='none'" />
             <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
             <div class="service-num">08</div>
           </div>
@@ -356,7 +454,7 @@
         <article class="service-card reveal">
           <a href="hizmetler/desenli-epoksi.html" class="service-card-hit" aria-labelledby="svc-desenli-epoksi"></a>
           <div class="service-media">
-            <img src="images/desenli%20epoksi.jpg" alt="Desenli dekoratif epoksi zemin uygulaması" onerror="this.style.display='none'" />
+            <img src="images/desenli%20epoksi.jpg" alt="Desenli dekoratif epoksi zemin uygulaması" loading="lazy" decoding="async" onerror="this.style.display='none'" />
             <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
             <div class="service-num">09</div>
           </div>
@@ -415,29 +513,67 @@
 
       <div class="refs-grid">
         <div class="ref-card tall reveal">
-          <img src="images/ref-1.jpg" alt="Eston Deniz Evleri" onerror="this.style.display='none'" />
+          <img src="images/ref-1.jpg" alt="Eston Deniz Evleri — Parlak Perdahlı Zemin" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           <div class="ref-info"><span class="tag">250.000 m²</span><h4>Eston Deniz Evleri</h4><div class="loc">Parlak Perdahlı Zemin</div></div>
         </div>
         <div class="ref-card reveal reveal-delay-1">
-          <img src="images/ref-2.jpg" alt="Osmanlı Arşiv Binası" onerror="this.style.display='none'" />
+          <img src="images/ref-2.jpg" alt="Osmanlı Arşiv Binası — Parlak Perdahlı Zemin" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           <div class="ref-info"><span class="tag">150.000 m²</span><h4>Osmanlı Arşiv Binası</h4><div class="loc">Parlak Perdahlı Zemin</div></div>
         </div>
         <div class="ref-card reveal reveal-delay-2">
-          <img src="images/ref-3.jpg" alt="Giresun Çotanak Stadı" onerror="this.style.display='none'" />
+          <img src="images/ref-3.jpg" alt="Giresun Çotanak Stadı — Parlak Perdahlı ve Fırçalı Zemin" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           <div class="ref-info"><span class="tag">150.000 m²</span><h4>Giresun Çotanak Stadı</h4><div class="loc">Parlak Perdahlı & Fırçalı</div></div>
         </div>
         <div class="ref-card wide reveal">
-          <img src="images/ref-4.jpg" alt="Samsun Tekkeköy Devlet Hastanesi" onerror="this.style.display='none'" />
+          <img src="images/ref-4.jpg" alt="Samsun Tekkeköy Devlet Hastanesi — Parlak Perdahlı ve Fırçalı Zemin" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           <div class="ref-info"><span class="tag">120.000 m²</span><h4>Samsun Tekkeköy Devlet Hastanesi</h4><div class="loc">Parlak Perdahlı & Fırçalı Zemin</div></div>
         </div>
         <div class="ref-card reveal reveal-delay-1">
-          <img src="images/ref-5.jpg" alt="Roketsan Kırıkkale" onerror="this.style.display='none'" />
+          <img src="images/ref-5.jpg" alt="Roketsan Kırıkkale — Fırçalı Zemin Uygulaması" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           <div class="ref-info"><span class="tag">80.000 m²</span><h4>Roketsan Kırıkkale</h4><div class="loc">Fırçalı Zemin Uygulaması</div></div>
         </div>
       </div>
 
       <div class="text-center reveal" style="margin-top:40px">
         <a href="referanslar.html" class="btn btn-ghost">Tüm Referanslar <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="section" id="sss">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="eyebrow">Sıkça Sorulan Sorular</span>
+        <h2 class="section-title">Aklınıza Takılanlar</h2>
+        <p class="section-subtitle">Endüstriyel zemin, parlak perdah, fırçalı ve tepsili zemin uygulamaları hakkında en sık sorulan soruları sizin için yanıtladık.</p>
+      </div>
+
+      <div class="faq-wrap reveal">
+        <details class="faq-item">
+          <summary>Endüstriyel beton zemin uygulaması ne kadar sürede tamamlanır?</summary>
+          <div class="faq-answer">Proje büyüklüğüne, döküm hacmine ve uygulama tipine (parlak perdah, fırçalı, tepsili vb.) göre değişir. Ortalama 1.000 m²'lik bir saha, perdah ve silim dahil 3-7 iş günü içinde tamamlanabilir. Detaylı program keşif sonrası paylaşılır.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Parlak perdahlı zemin ile fırçalı zemin arasındaki fark nedir?</summary>
+          <div class="faq-answer">Parlak perdahlı zemin ayna parlaklığında, tozumaz ve kapalı iç mekânlarda tercih edilir. Fırçalı zemin ise yüzeyi tırtıllı, kaymaz yapıda olup rampa, dış mekân ve yüksek trafikli alanlarda güvenlik amacıyla uygulanır.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Hangi bölgelerde hizmet veriyorsunuz?</summary>
+          <div class="faq-answer">Yıldırımlar İnşaat olarak merkez ofisimiz Beylikdüzü / İstanbul'da bulunmakta olup Türkiye genelinde endüstriyel zemin, parlak perdah, fırçalı zemin, tepsili (laser screed), taş halı ve epoksi kaplama hizmetleri veriyoruz.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Yüzey sertleştirici uygulaması nedir, neden gereklidir?</summary>
+          <div class="faq-answer">Yüzey sertleştirici, taze beton üzerine serilen korundum veya kuvars esaslı kuru sarf malzemesidir. Perdah ile birlikte yüzeye entegre edilir; aşınma direncini, darbe dayanımını ve yüzey ömrünü önemli ölçüde artırır.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Uyguladığınız zeminlerde garanti var mı?</summary>
+          <div class="faq-answer">Evet. Tüm uygulamalarımızda işçilik ve sistem garantisi sağlıyoruz. Süre ve kapsam, seçilen sistem ile kullanım koşullarına göre sözleşmede net olarak tanımlanır.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Ücretsiz keşif ve teklif alabilir miyim?</summary>
+          <div class="faq-answer">Evet, projeniz için ücretsiz keşif ve detaylı teklif sunuyoruz. 0538 645 58 44 numaralı telefondan, WhatsApp'tan veya iletişim formundan bize ulaşabilirsiniz.</div>
+        </details>
       </div>
     </div>
   </section>
