@@ -1,26 +1,23 @@
-Bu klasöre aşağıdaki isimlerle görsellerinizi atmanız yeterli.
-Dosya yoksa site otomatik olarak görseli gizler; hata vermez.
-
 KURUMSAL LOGO:
-  logo-yildirim.png        -> Üst menü, alt bilgi ve tarayıcı sekmesi (favicon)
+  logo-yildirim.png        -> Üst menü, alt bilgi, favicon
 
-ZORUNLU:
-  hero-1.jpg               -> Ana sayfa hero arka planı (1920x1080 önerilir)
-  about-1.jpg              -> Hakkımızda ana görsel (800x1000)
-  about-2.jpg              -> Hakkımızda küçük görsel (600x600)
+ANA SAYFA:
+  hero-1.jpg               -> Hero arka planı
+  about-1.jpg, about-2.jpg -> Hakkımızda bölümü
 
-HİZMET GÖRSELLERİ (800x500):
-  service-endustriyel.jpg
-  service-epoksi.jpg
-  service-silim.jpg
-  service-beton.jpg
-  service-yol.jpg
-  service-dekoratif.jpg
-  service-tashali.jpg
+HİZMET KARTLARI (site service-*.jpg dosya adlarını kullanır):
+  service-1.jpg            -> Parlak perdahlı / silimli beton (parlak beton silim)
+  service-2.jpg            -> Fırçalı (broom) beton
+  service-3.jpg            -> Tepsili / geniş hacim ticari döşeme (ör. terrazzo görseli)
+  service-4.jpg            -> Endüstriyel beton, baskı beton
+  service-5.jpg            -> Yüzey sertleştirici + dekoratif desenli epoksi
+  service-6.jpg            -> Derz kesim & dolgu (epoksi iç mekân bitişi ile uyumlu görsel)
+  service-tashali.jpg      -> Taş halı / reçine bağlı agregalı kaplama
+  service-7.jpg            -> Zemin bakım ve onarım
 
-REFERANSLAR (800x600):
-  ref-1.jpg, ref-2.jpg, ref-3.jpg, ref-4.jpg, ref-5.jpg,
-  ref-6.jpg, ref-7.jpg, ref-8.jpg, ref-9.jpg
+Kaynak dosyalar Türkçe adlarla da eklenebilir; yayına service-*.jpg olarak kopyalanmalıdır.
 
-Not: Farklı uzantı kullanacaksanız (.png, .webp), HTML'deki
-     img src="..." değerlerini güncelleyin.
+REFERANSLAR:
+  ref-1.jpg … ref-13.jpg
+
+Not: Görsel uzantısı değişirse index ve hizmetler/*.html içindeki yolları güncelleyin.
