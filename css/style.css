@@ -1722,16 +1722,20 @@ section {
 }
 
 .sidebar-list a {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
+  column-gap: 12px;
   padding: 12px 14px;
   border-radius: var(--radius-sm);
   margin-bottom: 4px;
   font-size: 14px;
   font-weight: 500;
+  line-height: 1.35;
   color: var(--color-text);
-  transition: all var(--transition);
+  transition: background var(--transition), color var(--transition);
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 .sidebar-list a:hover,
@@ -1746,8 +1750,15 @@ section {
 
 .sidebar-list a i {
   font-size: 11px;
+  line-height: 1;
+  width: 1em;
+  height: 1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0.6;
   pointer-events: none;
+  flex-shrink: 0;
 }
 
 /* ---------- Footer ---------- */
@@ -2185,13 +2196,9 @@ section {
     white-space: nowrap;
   }
   .sidebar-list a {
-    min-height: 44px;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    gap: 8px;
-  }
-  .sidebar-list a i {
-    flex-shrink: 0;
+    min-height: 48px;
+    padding: 13px 14px;
+    align-items: center;
   }
   .feat-list li {
     align-items: flex-start;
