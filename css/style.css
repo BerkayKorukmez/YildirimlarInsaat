@@ -380,6 +380,9 @@ section {
   gap: 6px;
 }
 
+/* Mobil menüdeki CTA, masaüstünde zaten sağ üstte Teklif Al var → gizli */
+.nav-menu .mobile-cta { display: none; }
+
 .nav-menu a {
   position: relative;
   padding: 10px 16px;
@@ -1706,81 +1709,135 @@ section {
   flex-shrink: 0;
 }
 
-/* ---------- Sidebar (Tüm Hizmetler) — sıfırdan sade yapı ----------
-   Kural: parent transform yok, absolute pozisyon yok, pseudo ikon yok.
-   Her link normal akışta, blok seviyesinde; tıklama kutusu === görünen kutu. */
+/* ---------- Sidebar (Tüm Hizmetler) — buton estetiği ----------
+   Sabit yükseklikli beyaz kart butonlar. Font / görsel yüklenirken
+   hiçbir layout shift yok. `contain: layout style` ile izolasyon. */
 .sidebar {
+  position: relative;
+  z-index: 5;
   background: var(--color-soft);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: 22px 20px;
   margin-top: 28px;
+  contain: layout style;
+  isolation: isolate;
 }
 
 .sidebar h4 {
   font-size: 1.15rem;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--color-border);
+  line-height: 1.2;
+  color: var(--color-dark);
 }
 
 .sidebar-list {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
+/* Her link tam bağımsız bir buton — absolute/pseudo yok, saf kutu. */
 .sidebar-list a {
-  display: flex;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
   width: 100%;
-  min-height: 52px;
-  padding: 14px 18px;
-  margin: 0 0 6px;
-  border-radius: 10px;
-  background: transparent;
+  height: 56px;
+  padding: 0 18px;
+  background: #fff;
   color: var(--color-text);
   font-size: 15px;
-  font-weight: 500;
-  line-height: 1.35;
+  font-weight: 600;
+  line-height: 1.2;
   text-decoration: none;
   box-sizing: border-box;
-  transition: background 0.2s ease, color 0.2s ease;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(10, 22, 40, 0.04);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background 0.18s ease, color 0.18s ease,
+              border-color 0.18s ease, box-shadow 0.18s ease;
   touch-action: manipulation;
-  -webkit-tap-highlight-color: rgba(255, 122, 0, 0.18);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-.sidebar-list a::after {
-  content: "›";
-  font-size: 20px;
+/* Sağ ok ikonu — ayrı daire; pointer-events: none ile tıklama yakalamaz */
+.sidebar-list a .link-arrow {
+  display: inline-flex;
+  width: 26px;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-soft-2);
+  color: var(--color-muted);
+  font-size: 18px;
+  font-weight: 700;
   line-height: 1;
-  opacity: 0.45;
+  padding-bottom: 2px;
+  transition: background 0.2s ease, color 0.2s ease;
+  pointer-events: none;
   flex-shrink: 0;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  transform: translateY(-1px);
+}
+
+/* Metin taşma koruması */
+.sidebar-list a .link-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  pointer-events: none;
 }
 
 .sidebar-list a:hover {
-  background: var(--color-dark);
-  color: #fff;
+  border-color: rgba(255, 122, 0, 0.4);
+  color: var(--color-dark);
+  box-shadow: 0 6px 18px rgba(10, 22, 40, 0.08);
 }
-
-.sidebar-list a:hover::after {
-  opacity: 1;
-}
-
-.sidebar-list a:active {
-  background: rgba(255, 122, 0, 0.22);
-  color: var(--color-text);
-}
-
-.sidebar-list a.active {
+.sidebar-list a:hover .link-arrow {
   background: var(--gradient-primary);
   color: #fff;
 }
 
-.sidebar-list a.active::after {
-  opacity: 1;
+/* Dokunma geri bildirimi — anlık turuncu flaş */
+.sidebar-list a:active {
+  background: var(--gradient-primary);
   color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(255, 107, 26, 0.35);
+  transition: none;
+}
+.sidebar-list a:active .link-arrow {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+/* Aktif (current page) — turuncu gradient buton */
+.sidebar-list a.active {
+  background: var(--gradient-primary);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(255, 107, 26, 0.32);
+}
+.sidebar-list a.active .link-arrow {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+/* Klavye erişilebilirliği */
+.sidebar-list a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-color: transparent;
 }
 
 /* ---------- Footer ---------- */
@@ -1966,8 +2023,34 @@ section {
 .reveal-delay-3 { transition-delay: 0.24s; }
 .reveal-delay-4 { transition-delay: 0.32s; }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 1100px) {
+/* =========================================================
+   RESPONSIVE DESIGN — sistematik breakpoint sırası
+   Breakpoints:
+     ≤1200px → Ultra-wide tablet / dar desktop: container sıkıştırma
+     ≤1024px → Tablet yatay / küçük laptop: 4/3 kolon → 2 kolon
+     ≤820px  → Tablet dikey / büyük telefon: hamburger menü aktif, çoğu grid 1 kolon
+     ≤560px  → Telefon: her şey tek kolon, kompakt tipografi
+     ≤380px  → Çok küçük telefon: ekstra sıkı tipografi
+   ========================================================= */
+
+/* ---------- ≤1200px: Container sıkıştırma ---------- */
+@media (max-width: 1200px) {
+  .container {
+    padding-inline: 28px;
+  }
+  .hero-title   { font-size: clamp(2rem, 4.5vw, 3rem); }
+  .section-title { font-size: clamp(1.9rem, 3.6vw, 2.4rem); }
+}
+
+/* ---------- ≤1024px: Tablet — 2 kolon yerleşimler ---------- */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .why-grid      { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .refs-grid     { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 220px; gap: 16px; }
+  .ref-card.wide { grid-column: span 2; }
+  .ref-card.tall { grid-row: auto; }
+  .footer-grid   { grid-template-columns: 1fr 1fr; gap: 36px; }
+
   .hero-grid,
   .about-grid,
   .contact-grid,
@@ -1976,14 +2059,59 @@ section {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .why-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-  .service-detail-media { position: static; width: 100%; max-width: min(520px, 100%); margin-inline: auto; }
-  .cta-actions { justify-content: flex-start; }
+
+  /* Hizmet detayı: mobilde/tabletede sidebar görsellerin ÜSTÜNDE.
+     Görsellerin yükleme sırasındaki olası layout shift'i, sidebar
+     tıklama koordinatlarını etkilemesin diye sıralama değişti. */
+  .service-detail-media {
+    position: static;
+    width: 100%;
+    max-width: min(540px, 100%);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .service-detail-media .sidebar     { order: -1; margin-top: 0; margin-bottom: 8px; }
+  .service-detail-media .img-main    { order: 1; }
+  .service-detail-media .img-main + .img-main { margin-top: 20px; }
+
+  /* Hit-test'i kaydırabilecek transform'ları sidebar ve içeriklerde kapat */
+  .service-detail-grid .reveal,
+  .service-detail-grid .reveal.visible,
+  .service-detail-media,
+  .service-detail-media .sidebar,
+  .service-detail-content {
+    transform: none !important;
+  }
+
+  .about-features { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .hero-stats     { grid-template-columns: 1fr 1fr; }
+  .cta-inner      { text-align: center; }
+  .cta-inner h2   { margin-inline: auto; }
+  .cta-actions    { justify-content: center; }
 }
 
+/* ---------- ≤820px: Mobil — hamburger menü, tek kolon ---------- */
 @media (max-width: 820px) {
+  /* Global spacing */
+  .container  { padding-inline: 20px; }
+  .section    { padding: 64px 0; }
+  .section-sm { padding: 48px 0; }
+
+  /* Topbar'ı gizle, header'ı koyu kurumsal şerit yap.
+     KRİTİK: backdrop-filter'ı kapatıyoruz — aksi halde mobilde fixed-positioned
+     .nav-menu container bloğu header'a göre hesaplanıyor (özellikle iOS Safari)
+     ve menü konumu kayıyor. */
+  .topbar { display: none; }
+  .header {
+    background: linear-gradient(180deg, var(--color-dark-2) 0%, var(--color-dark) 100%);
+    border-bottom: 1px solid rgba(255, 107, 26, 0.28);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .header.scrolled { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35); }
+
   .logo-img {
     height: 28px;
     max-width: min(148px, 42vw);
@@ -1995,40 +2123,10 @@ section {
     height: 32px;
     max-width: 168px;
   }
-  .form-group input,
-  .form-group textarea,
-  .form-group select {
-    font-size: 16px;
-  }
-  .page-header {
-    padding: 88px 0 72px;
-  }
-  .cta-banner {
-    padding: 56px 0;
-  }
-  .cta-actions {
-    justify-content: stretch;
-  }
-  .cta-actions .btn {
-    flex: 1 1 auto;
-    min-width: min(100%, 200px);
-  }
-  .hero-scroll {
-    display: none;
-  }
-  .section { padding: 70px 0; }
-  .topbar { display: none; }
 
-  /* Mobil üst bar: topbar kapalıyken beyaz şeridi kaldır — koyu kurumsal şerit */
-  .header {
-    background: linear-gradient(180deg, var(--color-dark-2) 0%, var(--color-dark) 100%);
-    border-bottom: 1px solid rgba(255, 107, 26, 0.28);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-  }
-  .header.scrolled {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  }
+  /* Hamburger toggle */
   .nav-toggle {
+    display: flex;
     background: rgba(255, 255, 255, 0.12);
     color: #fff;
   }
@@ -2036,87 +2134,179 @@ section {
     background: var(--color-primary);
     color: #fff;
   }
+  .nav-cta .btn:not(.nav-toggle) { display: none; }
 
+  /* ==== Mobil menü — tüm viewport genişliğinde sabitlenmiş panel ==== */
   .nav-menu {
     position: fixed;
     top: calc(72px + env(safe-area-inset-top, 0px));
     left: 0;
     right: 0;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0;
+    box-sizing: border-box;
     flex-direction: column;
     align-items: stretch;
     background: var(--color-dark-2);
-    padding: 20px;
-    padding-bottom: max(20px, env(safe-area-inset-bottom, 0px));
-    gap: 4px;
+    padding: 14px 14px max(14px, env(safe-area-inset-bottom, 0px));
+    gap: 2px;
     border-top: 1px solid rgba(255, 107, 26, 0.15);
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
-    transform: translateY(-20px);
     opacity: 0;
     visibility: hidden;
-    transition: all var(--transition);
-    max-height: min(520px, calc(100vh - 72px - env(safe-area-inset-top, 0px)));
-    max-height: min(520px, calc(100dvh - 72px - env(safe-area-inset-top, 0px)));
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: transform 0.25s ease, opacity 0.22s ease, visibility 0.25s;
+    max-height: min(560px, calc(100dvh - 72px - env(safe-area-inset-top, 0px)));
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
+    z-index: 99;
   }
   .nav-menu.open {
-    transform: translateY(0);
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
   }
-  .nav-menu a {
+
+  /* Ana menü linkleri */
+  .nav-menu > a,
+  .nav-menu .has-drop > a {
+    display: flex;
+    align-items: center;
     width: 100%;
-    padding: 14px 18px;
+    min-height: 52px;
+    padding: 14px 16px;
+    border-radius: 10px;
     color: rgba(255, 255, 255, 0.92);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 15.5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(255, 122, 0, 0.2);
   }
   .nav-menu a::after { display: none; }
-  .nav-menu a:hover,
-  .nav-menu a.active {
-    color: var(--color-primary-light);
-  }
-  .nav-menu .has-drop > a {
-    color: rgba(255, 255, 255, 0.92);
-  }
-  .nav-menu .has-drop > a:hover {
-    color: var(--color-primary-light);
-  }
-  .nav-menu .drop {
-    position: static;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    box-shadow: none;
-    border: none;
-    background: rgba(0, 0, 0, 0.25);
-    padding: 6px;
-    margin-top: 4px;
-    border-radius: var(--radius-md);
-  }
-  .nav-menu .drop a {
-    color: rgba(255, 255, 255, 0.88);
-    border-bottom-color: rgba(255, 255, 255, 0.06);
-  }
-  .nav-menu .drop a:hover,
-  .nav-menu .drop a.active {
-    background: rgba(255, 107, 26, 0.18);
+  .nav-menu > a:hover,
+  .nav-menu > a:active,
+  .nav-menu .has-drop > a:hover,
+  .nav-menu .has-drop > a:active {
+    background: rgba(255, 122, 0, 0.14);
     color: #fff;
   }
-  .nav-menu .drop::before { display: none; }
-  .nav-toggle { display: flex; }
-  .nav-cta .btn:not(.nav-toggle) { display: none; }
-
-  /* Hizmet kartları: reveal translateY bazı mobil tarayıcılarda dokunma hedefini kaydırabiliyor */
-  .services-grid .reveal,
-  .services-grid .reveal.visible {
-    transform: none;
+  .nav-menu > a.active {
+    background: var(--gradient-primary);
+    color: #fff;
   }
 
-  .hero { min-height: auto; }
-  .hero-inner { padding: 60px 0; }
-  .hero-stats { grid-template-columns: 1fr 1fr; }
+  /* "Hizmetlerimiz" satırı */
+  .nav-menu .has-drop > a { justify-content: space-between; cursor: pointer; }
+  .nav-menu .has-drop > a i {
+    font-size: 11px;
+    opacity: 0.75;
+    transition: transform 0.25s ease;
+    margin-left: 8px;
+  }
+  .nav-menu .has-drop.open > a {
+    background: rgba(255, 122, 0, 0.12);
+    color: #fff;
+  }
+  .nav-menu .has-drop.open > a i {
+    transform: rotate(180deg);
+    opacity: 1;
+  }
 
+  /* Drop panel — EN BASİT display toggle. Animasyon yok, %100 güvenilir. */
+  .nav-menu .drop,
+  .nav-menu .has-drop .drop {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    min-width: 0 !important;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-left: 2px solid rgba(255, 122, 0, 0.35) !important;
+    padding: 4px 0 4px 10px;
+    margin: 4px 0 6px 16px;
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible;
+  }
+  .nav-menu .drop::before,
+  .nav-menu .has-drop .drop::before { display: none !important; }
+  .nav-menu .has-drop.open .drop {
+    display: flex;
+  }
+
+  /* Drop içindeki linkler — tam genişlik, sola yaslı */
+  .nav-menu .drop a {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 46px;
+    padding: 12px 14px !important;
+    border-radius: 8px !important;
+    color: rgba(255, 255, 255, 0.78) !important;
+    font-size: 14.5px !important;
+    font-weight: 500 !important;
+    text-align: left;
+    text-decoration: none;
+    background: transparent;
+    transition: background 0.2s ease, color 0.2s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(255, 122, 0, 0.2);
+  }
+  .nav-menu .drop a:hover,
+  .nav-menu .drop a:active {
+    background: rgba(255, 122, 0, 0.14) !important;
+    color: #fff !important;
+  }
+  .nav-menu .drop a.active {
+    background: var(--gradient-primary) !important;
+    color: #fff !important;
+  }
+
+  /* Mobil CTA butonu */
+  .nav-menu .mobile-cta {
+    display: flex;
+    margin-top: 12px;
+    padding: 14px 16px;
+    min-height: 52px;
+    background: var(--gradient-primary);
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(255, 107, 26, 0.35);
+    touch-action: manipulation;
+  }
+  .nav-menu .mobile-cta i { font-size: 14px; }
+
+  /* ==== HERO ==== */
+  .hero { min-height: auto; }
+  .hero-inner { padding: 56px 0 64px; }
+  .hero-scroll { display: none; }
+  .hero-stats  { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .hero-visual { max-width: 520px; margin-inline: auto; }
+
+  /* ==== ABOUT ==== */
   .about-visual {
     max-width: 100%;
     margin-inline: auto;
@@ -2137,31 +2327,64 @@ section {
   .about-visual .exp-badge .num { font-size: 2.2rem; }
   .about-features { grid-template-columns: 1fr; }
 
-  .refs-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
+  /* ==== HİZMETLER / REFERANSLAR / WHY / FOOTER ==== */
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .why-grid      { grid-template-columns: 1fr 1fr; }
+  .vm-grid       { grid-template-columns: 1fr; }
+
+  .refs-grid     { grid-template-columns: 1fr 1fr; grid-auto-rows: 180px; gap: 14px; }
   .ref-card.wide { grid-column: span 2; }
   .ref-card.tall { grid-row: auto; }
+  .ref-info      { padding: 18px; }
+
+  /* Hizmet kartı reveal transform'u bazı mobil tarayıcılarda hit-test kaydırabiliyor */
+  .services-grid .reveal,
+  .services-grid .reveal.visible { transform: none; }
 
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .feat-list { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
+  .feat-list   { grid-template-columns: 1fr; }
+  .form-row    { grid-template-columns: 1fr; }
+
+  /* ==== PAGE HEADER & CTA ==== */
+  .page-header { padding: 88px 0 72px; }
+  .cta-banner  { padding: 56px 0; }
+  .cta-actions { justify-content: stretch; flex-wrap: wrap; }
+  .cta-actions .btn {
+    flex: 1 1 auto;
+    min-width: min(100%, 200px);
+  }
+
+  /* ==== FORM (iOS auto-zoom önlemi) ==== */
+  .form-group input,
+  .form-group textarea,
+  .form-group select { font-size: 16px; }
 }
 
-@media (max-width: 520px) {
-  .section { padding: 56px 0; }
-  .section-sm { padding: 48px 0; }
-  .page-header {
-    padding: 72px 0 56px;
-  }
+/* ---------- ≤560px: Telefon — tek kolon, kompakt ---------- */
+@media (max-width: 560px) {
+  .container  { padding-inline: 16px; }
+  .section    { padding: 52px 0; }
+  .section-sm { padding: 40px 0; }
+
+  .page-header { padding: 72px 0 56px; }
   .page-header p {
     padding-inline: 4px;
     font-size: 0.95rem;
   }
-  .services-grid { grid-template-columns: 1fr; }
-  .why-grid { grid-template-columns: 1fr; }
-  .vm-grid { grid-template-columns: 1fr; }
-  .hero-stats { grid-template-columns: 1fr; text-align: center; }
-  .hero-stat { text-align: center; }
+
+  /* Tüm grid'leri tek kolona indir */
+  .services-grid,
+  .why-grid,
+  .vm-grid,
+  .about-features,
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+  .hero-stats { text-align: center; gap: 14px; }
+  .hero-stat  { text-align: center; }
   .hero-stat .num { justify-content: center; }
+
+  /* Hero CTA tek kolon, tam genişlik */
   .hero-cta { flex-direction: column; width: 100%; }
   .hero-cta .btn { width: 100%; }
   .hero-badge {
@@ -2173,17 +2396,31 @@ section {
     gap: 12px;
   }
   .hero-badge-text strong { font-size: 14px; }
-  .refs-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+
+  /* Referans kartları tek kolon */
+  .refs-grid     { grid-template-columns: 1fr; grid-auto-rows: 220px; }
   .ref-card.wide { grid-column: auto; }
+
+  /* Hizmet detay sidebar/görseller tam genişlik */
+  .service-detail-media { max-width: 100%; }
+  .sidebar { padding: 20px 18px; }
+  .sidebar-list a {
+    height: 60px;            /* mobilde daha büyük touch target */
+    padding: 0 18px;
+    font-size: 15.5px;
+  }
+  .feat-list li { align-items: flex-start; }
+
+  /* İletişim */
   .contact-info-card,
   .contact-form { padding: 28px 22px; }
   .map-wrap {
-    margin-top: 48px;
+    margin-top: 40px;
     border-radius: var(--radius-md);
   }
-  .map-wrap iframe {
-    height: min(320px, 62vw);
-  }
+  .map-wrap iframe { height: min(320px, 62vw); }
+
+  /* Footer */
   .footer-bottom {
     flex-direction: column;
     align-items: center;
@@ -2196,50 +2433,43 @@ section {
     justify-content: center;
     gap: 12px 20px;
   }
-  .cta-actions {
-    flex-direction: column;
-    width: 100%;
-  }
+
+  /* CTA actions: dikey stack */
+  .cta-actions { flex-direction: column; width: 100%; }
   .cta-actions .btn {
     width: 100%;
     justify-content: center;
     white-space: normal;
     text-align: center;
   }
-  .btn {
-    white-space: normal;
-    text-align: center;
-  }
-  .nav-cta .btn-primary {
-    white-space: nowrap;
-  }
-  .sidebar {
-    padding: 18px;
-  }
-  .sidebar-list a {
-    min-height: 56px;
-    padding: 16px 18px;
-  }
-  .feat-list li {
-    align-items: flex-start;
-  }
-  .service-detail-media {
-    width: 100%;
-    max-width: 100%;
-  }
-  .hero-inner {
-    padding: 48px 0 56px;
-  }
+  .btn { white-space: normal; text-align: center; }
+  .nav-cta .btn-primary { white-space: nowrap; }
+
+  .hero-inner { padding: 48px 0 56px; }
 }
 
+/* ---------- ≤380px: Çok küçük telefon — ekstra sıkı tipografi ---------- */
 @media (max-width: 380px) {
-  .hero-title {
-    font-size: clamp(1.85rem, 9vw, 2.4rem);
+  .container { padding-inline: 14px; }
+  .hero-title     { font-size: clamp(1.75rem, 8.5vw, 2.2rem); }
+  .section-title  { font-size: clamp(1.5rem, 7.5vw, 1.9rem); }
+  .hero-desc      { font-size: 0.95rem; }
+  .nav-menu       { padding: 12px 10px; }
+  .service-card h3 { font-size: 1.1rem; }
+  .sidebar-list a  { height: 58px; font-size: 14.5px; padding: 0 14px; }
+  .contact-info-card,
+  .contact-form   { padding: 22px 18px; }
+}
+
+/* ---------- Hareket tercihi: düşük animasyon ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
-  .section-title {
-    font-size: clamp(1.65rem, 8vw, 2rem);
-  }
-  .nav-menu {
-    padding: 16px 14px;
-  }
+  .reveal { opacity: 1; transform: none; }
 }

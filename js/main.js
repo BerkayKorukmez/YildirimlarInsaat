@@ -32,15 +32,57 @@
         icon.classList.toggle('fa-xmark');
       }
     });
+
+    /* Mobilde "Hizmetlerimiz" (has-drop) öğesini tıklayınca alt menü aç/kapa.
+       - Navigasyon (link'e gitme) engellenir; alt-item ile gidilir.
+       - Touch ve click çakışmaması için tek event; pointer-events sayesinde
+         nav-menu kapalıyken zaten çalışmaz. */
+    const isMobileView = () => window.matchMedia('(max-width: 820px)').matches;
+    menu.querySelectorAll('.has-drop').forEach((hasDrop) => {
+      const parentLink = hasDrop.querySelector(':scope > a');
+      if (!parentLink) return;
+      parentLink.addEventListener('click', (e) => {
+        if (isMobileView()) {
+          e.preventDefault();
+          e.stopPropagation();
+          /* Aynı menüde başka açık drop varsa onu kapat (tek açık kural) */
+          menu.querySelectorAll('.has-drop.open').forEach((el) => {
+            if (el !== hasDrop) el.classList.remove('open');
+          });
+          hasDrop.classList.toggle('open');
+        }
+      });
+    });
+
+    /* Aktif hizmet sayfasında ilgili dropdown otomatik açık başlasın
+       (sadece mobilde anlamlı; desktop'ta hover'la açılıyor zaten). */
+    try {
+      const current = window.location.pathname.split('/').pop() || '';
+      const activeDropLink = menu.querySelector(`.has-drop .drop a[href$="${current}"]`);
+      if (activeDropLink) {
+        activeDropLink.classList.add('active');
+        const hasDrop = activeDropLink.closest('.has-drop');
+        if (hasDrop && isMobileView()) hasDrop.classList.add('open');
+      }
+    } catch (_) {}
+
+    /* Bir alt-link'e tıklandığında menüyü kapat (ana menü de kapansın) */
     menu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
-        if (menu.classList.contains('open') && !link.parentElement.classList.contains('has-drop')) {
+        const parent = link.parentElement;
+        const isParentHasDrop = parent && parent.classList.contains('has-drop');
+        if (menu.classList.contains('open') && !isParentHasDrop) {
           closeMenu();
         }
       });
     });
+
+    /* Desktop'a dönerken state temizliği */
     window.addEventListener('resize', () => {
-      if (window.matchMedia('(min-width: 821px)').matches) closeMenu();
+      if (window.matchMedia('(min-width: 821px)').matches) {
+        closeMenu();
+        menu.querySelectorAll('.has-drop.open').forEach((el) => el.classList.remove('open'));
+      }
     });
   }
 
