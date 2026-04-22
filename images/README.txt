@@ -11,8 +11,10 @@ HİZMET GÖRSELLERİ:
   service-3.png            -> Tepsili vitrin: terrazzo
   service-4.jpg            -> Endüstriyel beton dökümü (geniş alan)
   service-baski.png        -> Baskı beton (stamp) — endüstriyel sayfada ikinci görsel
-  service-5.png            -> Yüzey sertleştirici (kuru sarf saha)
-  service-epoksi.png       -> Endüstriyel epoksi — yüzey sayfasında ikinci görsel
+  service-5.png            -> Yüzey sertleştirici (kuru sarf saha) — epoksi sayfasında üst vitrin (teras/çatı dökümü + perdah)
+  service-epoksi.png       -> Endüstriyel epoksi (turkuaz koridor) — epoksi-kaplama.html ikinci görsel
+  desenli epoksi.jpg       -> Desenli epoksi — desenli-epoksi.html vitrin
+  epoksi kaplama.jpg       -> Epoksi kaplama sahası — desenli-epoksi.html ikinci görsel
   service-6.jpg            -> Derz kesim & dolgu vitrin: derz hatlı parlak beton döşeme
   service-tashali.png      -> Taş halı
   service-7.png            -> Zemin bakım ve onarım
