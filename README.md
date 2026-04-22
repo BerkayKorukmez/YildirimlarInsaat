@@ -60,7 +60,7 @@ yildirimlarinsaat/
 | `service-beton.jpg` | Beton Parlatma | 800×500 |
 | `service-yol.jpg` | Yol Çizgi | 800×500 |
 | `service-dekoratif.jpg` | Dekoratif Zemin | 800×500 |
-| `service-tashali.jpg` | Taş Halı | 800×500 |
+| `service-tashali.png` | Taş Halı | 800×500 |
 
 ### Referanslar
 
