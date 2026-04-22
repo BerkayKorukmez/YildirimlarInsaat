@@ -1937,6 +1937,9 @@ section {
     height: 28px;
     max-width: min(148px, 42vw);
   }
+  .header .logo-img {
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+  }
   .footer-about .logo-img {
     height: 32px;
     max-width: 168px;
@@ -1964,6 +1967,25 @@ section {
   }
   .section { padding: 70px 0; }
   .topbar { display: none; }
+
+  /* Mobil üst bar: topbar kapalıyken beyaz şeridi kaldır — koyu kurumsal şerit */
+  .header {
+    background: linear-gradient(180deg, var(--color-dark-2) 0%, var(--color-dark) 100%);
+    border-bottom: 1px solid rgba(255, 107, 26, 0.28);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  }
+  .header.scrolled {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  }
+  .nav-toggle {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+  }
+  .nav-toggle:hover {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
   .nav-menu {
     position: fixed;
     top: calc(72px + env(safe-area-inset-top, 0px));
@@ -1971,11 +1993,12 @@ section {
     right: 0;
     flex-direction: column;
     align-items: stretch;
-    background: #fff;
+    background: var(--color-dark-2);
     padding: 20px;
     padding-bottom: max(20px, env(safe-area-inset-bottom, 0px));
     gap: 4px;
-    box-shadow: var(--shadow-lg);
+    border-top: 1px solid rgba(255, 107, 26, 0.15);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
     transform: translateY(-20px);
     opacity: 0;
     visibility: hidden;
@@ -1994,9 +2017,20 @@ section {
   .nav-menu a {
     width: 100%;
     padding: 14px 18px;
-    border-bottom: 1px solid var(--color-border);
+    color: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
   .nav-menu a::after { display: none; }
+  .nav-menu a:hover,
+  .nav-menu a.active {
+    color: var(--color-primary-light);
+  }
+  .nav-menu .has-drop > a {
+    color: rgba(255, 255, 255, 0.92);
+  }
+  .nav-menu .has-drop > a:hover {
+    color: var(--color-primary-light);
+  }
   .nav-menu .drop {
     position: static;
     transform: none;
@@ -2004,9 +2038,19 @@ section {
     visibility: visible;
     box-shadow: none;
     border: none;
-    background: var(--color-soft);
-    padding: 4px;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 6px;
     margin-top: 4px;
+    border-radius: var(--radius-md);
+  }
+  .nav-menu .drop a {
+    color: rgba(255, 255, 255, 0.88);
+    border-bottom-color: rgba(255, 255, 255, 0.06);
+  }
+  .nav-menu .drop a:hover,
+  .nav-menu .drop a.active {
+    background: rgba(255, 107, 26, 0.18);
+    color: #fff;
   }
   .nav-menu .drop::before { display: none; }
   .nav-toggle { display: flex; }
