@@ -899,6 +899,20 @@ section {
   flex-direction: column;
 }
 
+/* Tüm kart alanı tek hedef: mobilde görsele tıklayınca yanlış/boş hedef sorununu giderir */
+.service-card-hit {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+}
+
+.service-card-hit:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
 .service-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
@@ -928,6 +942,7 @@ section {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, transparent 40%, rgba(10, 22, 40, 0.75));
+  pointer-events: none;
 }
 
 .service-icon {
@@ -987,6 +1002,7 @@ section {
   font-size: 14px;
   padding-top: 16px;
   border-top: 1px solid var(--color-border);
+  pointer-events: none;
 }
 
 .service-link i {
@@ -1731,6 +1747,7 @@ section {
 .sidebar-list a i {
   font-size: 11px;
   opacity: 0.6;
+  pointer-events: none;
 }
 
 /* ---------- Footer ---------- */
@@ -1930,6 +1947,11 @@ section {
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .service-detail-media { position: static; width: 100%; max-width: min(520px, 100%); margin-inline: auto; }
   .cta-actions { justify-content: flex-start; }
+  /* Tek sütunda Tüm Hizmetler listesi: reveal translateY mobilde dokunma hedefini kaydırabiliyor (WhatsApp vb. değil) */
+  .service-detail-grid .reveal,
+  .service-detail-grid .reveal.visible {
+    transform: none;
+  }
 }
 
 @media (max-width: 820px) {
@@ -2055,6 +2077,12 @@ section {
   .nav-menu .drop::before { display: none; }
   .nav-toggle { display: flex; }
   .nav-cta .btn:not(.nav-toggle) { display: none; }
+
+  /* Hizmet kartları: reveal translateY bazı mobil tarayıcılarda dokunma hedefini kaydırabiliyor */
+  .services-grid .reveal,
+  .services-grid .reveal.visible {
+    transform: none;
+  }
 
   .hero { min-height: auto; }
   .hero-inner { padding: 60px 0; }
