@@ -1,0 +1,8 @@
+# https://yldrmlarinsaat.com
+User-agent: *
+Allow: /
+
+# Teşekkür sayfası arama sonuçlarında listelenmesin (noindex ile birlikte)
+Disallow: /tesekkur.html
+
+Sitemap: https://yldrmlarinsaat.com/sitemap.xml
