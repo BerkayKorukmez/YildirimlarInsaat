@@ -1740,6 +1740,13 @@ section {
   color: var(--color-text);
   text-decoration: none;
   transition: background var(--transition), color var(--transition);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255, 122, 0, 0.18);
+  user-select: none;
+}
+
+.sidebar-list a:active {
+  background: rgba(255, 122, 0, 0.15);
 }
 
 .sidebar-list a::after {
@@ -1950,6 +1957,13 @@ section {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Sidebar (sol kolondaki "Tüm Hizmetler") asla transform almasın;
+   mobilde sticky/transform geçişleri hit-test'i kaydırıyordu. */
+.service-detail-media.reveal,
+.service-detail-media.reveal.visible {
+  transform: none !important;
 }
 
 .reveal-delay-1 { transition-delay: 0.08s; }
